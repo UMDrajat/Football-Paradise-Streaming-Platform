@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stream</title>
+    
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
+    
+    <!-- Video.js JavaScript -->
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+
+    <!-- Custom CSS for Styling -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5rem;
+            color: #f8f8f8;
+        }
+
+        .video-container {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            border: 5px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            background-color: #000;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Stream</h1>
+    
+    <!-- Video.js Player Container -->
+    <div class="video-container">
+        <video
+            id="live-stream"
+            class="video-js vjs-default-skin"
+            controls
+            autoplay
+            preload="auto"
+            data-setup='{"debug": true, "liveui": true}'>
+            <source src="http://localhost/hls/test.m3u8" type="application/x-mpegURL">
+            Your browser does not support HLS streaming.
+        </video>
+    </div>
+
+    <footer>
+        Powered by <a href="https://videojs.com/" target="_blank">Video.js</a>
+    </footer>
+</body>
+</html>
